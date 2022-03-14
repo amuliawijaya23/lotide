@@ -1,22 +1,30 @@
 const assertEqual = require('../assertEqual.js');
 const tail = require('../tail.js');
+const assert = require('chai').assert;
 
-// Test case 1: Check element or the new array
-const result = tail([1,2,3,4,5]);
-assertEqual(result[0], 2);
-assertEqual(result[1], 3);
-assertEqual(result[2], 4);
+describe('#tail', () => {
+  it('returns [2, 3, 4, 5] for [1, 2, 3, 4, 5]', () => {
+    const inputName = [1, 2, 3, 4, 5];
+    const expectedOutput = [2, 3, 4, 5];
+    assert.deepEqual(tail(inputName), expectedOutput);
+  });
 
+  it('returns 6 for length of [1, 2, 3, 4, 5, 6] after calling tail([1, 2, 3, 4, 5, 6])', () => {
+    const inputName = [1, 2, 3, 4, 5, 6];
+    expectedOutput = 6;
+    tail(inputName);
+    assert.strictEqual(inputName.length, 6);
+  });
 
-// Test case 2: Check element of original array
-const resultTwo = [10,9,8,7,6,5];
-tail(resultTwo);
-assertEqual(resultTwo.length, 6);
+  it('returns [] for [1]', () => {
+    const inputName = [1];
+    const expectedOutput = [];
+    assert.deepEqual(tail(inputName), expectedOutput);
+  });
 
-// Test Case 3: Array with one element
-const resultThree = tail([1]);
-assertEqual(resultThree.length, 0);
-
-// Test Case 4: Empty array
-const resultFour = tail([]);
-assertEqual(resultFour.length, 0);
+  it('returns [] for []', () => {
+    const inputName = [];
+    const expectedOutput = [];
+    assert.deepEqual(tail(inputName), expectedOutput);
+  });
+});
