@@ -36,3 +36,5 @@ const result2 = map(words, (word) => word + '123');
 
 assertArraysEqual(result, ['g', 'c', 't', 'm', 't']);
 assertArraysEqual(result2, ['ground123', 'control123', 'to123', 'major123', 'tom123']);
+
+module.exports = map;

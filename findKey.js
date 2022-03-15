@@ -25,3 +25,5 @@ assertEqual(findKey({
 }, x => x.stars === 2), 'noma');
 
 assertEqual(findKey({winner: 'redbull', runnerup: 'mercedes', thirdPlace: 'ferrari'}, x => x === 'mercedes'), 'runnerup');
+
+module.exports = findKey;

@@ -49,3 +49,5 @@ assertArraysEqual(output['o'], [4, 8]);
 assertArraysEqual(output['m'], [5]);
 assertArraysEqual(output['w'], [7]);
 assertArraysEqual(output['s'], [11]);
+
+module.exports = letterPositions;
